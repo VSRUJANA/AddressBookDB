@@ -44,6 +44,11 @@ delete Address_Book
 where FirstName = 'Howard';
 select* from Address_Book;
 
+-- Retrieve contacts belonging to City or state from Address_Book
+select * from Address_Book
+where City = 'NewYork City' or State = 'Florida';
+
+
 
 
 
