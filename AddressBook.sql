@@ -43,8 +43,3 @@ select* from Address_Book;
 delete Address_Book
 where FirstName = 'Howard';
 select* from Address_Book;
-
-
-
-
-
