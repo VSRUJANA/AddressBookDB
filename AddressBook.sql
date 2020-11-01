@@ -48,6 +48,11 @@ select* from Address_Book;
 select * from Address_Book
 where City = 'NewYork City' or State = 'Florida';
 
+-- Count contacts by City in Address_Book  
+select City,count(City) from Address_Book group by City;
+-- Count contacts by State in Address_Book  
+select State,count(State) from Address_Book group by State;
+
 
 
 
