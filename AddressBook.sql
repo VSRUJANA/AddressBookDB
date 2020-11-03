@@ -57,3 +57,10 @@ select State,count(State) from Address_Book group by State;
 select * from Address_Book
 where City = 'Manhattan'
 order by FirstName asc;
+
+-- Add addressbook name and type columns
+alter table address_book add addressbook_name varchar(20), type varchar(20);
+-- update records for newly added columns
+update address_book set addressbook_name = 'Home',type = 'Family' where FirstName = 'Tony' or FirstName = 'Pepper' or FirstName = 'Edwin';
+update address_book set addressbook_name = 'Home',type = 'Friends' where FirstName = 'Steve' or FirstName = 'Bruce' or  FirstName = 'Peter' or FirstName = 'Thor';
+update address_book set addressbook_name = 'Office',type = 'Profession' where FirstName = 'Stephen' or FirstName = 'Natasha';
