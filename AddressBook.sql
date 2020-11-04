@@ -107,7 +107,7 @@ create table Contact_Type
 (
 ContactID int not null,
 AddressBookName varchar(20) not null,
-Contact_Type varchar(20) not null
+ContactType varchar(20) not null
 );
 
 -- Inserting data in tablee
@@ -128,3 +128,21 @@ select * from Contact_Type
 --Join contact_Details and contact_type tables
 select * from Contact_Details contact inner join Contact_Type type
 on (contact.Contact_ID = type.ContactID)
+
+-- UC-13 Ensure retrieve queries in UC 6, UC 7, UC 8 and UC 10 are working with new table structure
+-- Retrieve contacts belonging to City or state from Address_Book
+select * from Address_Book
+where City = 'NewYork City' or State = 'Florida';
+
+-- Count contacts by City in Address_Book  
+select City,count(City) from Address_Book group by City;
+-- Count contacts by State in Address_Book  
+select State,count(State) from Address_Book group by State;
+
+-- Sort contacts by first name for a given city
+select * from Address_Book
+where City = 'Manhattan'
+order by FirstName asc;
+
+-- Count contacts by type
+select ContactType, COUNT(ContactID) from Contact_Type group by ContactType;
